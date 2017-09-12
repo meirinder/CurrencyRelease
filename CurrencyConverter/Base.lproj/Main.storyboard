@@ -26,14 +26,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="editingChangedRight:" destination="BYZ-38-t0r" eventType="editingChanged" id="iz6-NB-Whv"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1FF-eU-AR4" userLabel="leftTextField">
                                 <rect key="frame" x="41" y="343" width="121.5" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="editingChangedLeft:" destination="BYZ-38-t0r" eventType="editingChanged" id="v4y-ed-ye7"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RUB" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M2p-Sy-K1b" userLabel="fromTextFieldForValute">
                                 <rect key="frame" x="104.5" y="184" width="258" height="30"/>
@@ -41,6 +47,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="FromTextFieldEditingDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="rHD-mR-fz2"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="USD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YI1-oC-vUR" userLabel="toTextFieldForValute">
                                 <rect key="frame" x="104.5" y="231" width="258" height="30"/>
@@ -48,6 +57,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="ToTextFieldEditingDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="lwE-uX-gBd"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jd-Na-6Qs">
                                 <rect key="frame" x="41" y="189" width="44" height="21"/>
@@ -70,6 +82,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Американский доллар" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylg-Qs-vfy" userLabel="leftLabel">
+                                <rect key="frame" x="26" y="381" width="150" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Российский рубль" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pq-Em-KD0" userLabel="rightLabel">
+                                <rect key="frame" x="226" y="381" width="150" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -79,7 +105,9 @@
                     </view>
                     <connections>
                         <outlet property="fromTextFieldForValute" destination="M2p-Sy-K1b" id="DJS-sI-vfO"/>
+                        <outlet property="leftLabel" destination="ylg-Qs-vfy" id="u3n-d2-f2N"/>
                         <outlet property="leftTextField" destination="1FF-eU-AR4" id="sJc-cu-Cpq"/>
+                        <outlet property="rightLabel" destination="6pq-Em-KD0" id="rzD-Ew-u0D"/>
                         <outlet property="rightTextField" destination="4RV-uJ-PKl" id="4fL-9b-Sa1"/>
                         <outlet property="toTextFieldForValute" destination="YI1-oC-vUR" id="n8J-bc-7MO"/>
                     </connections>

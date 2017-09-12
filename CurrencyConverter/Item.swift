@@ -16,10 +16,10 @@ class Item: NSObject {
     let name: String
     var value: Double
     var previous: Int
-    let nominal: Int
+    let nominal: Double
 
     
-    init(charCode: String, id: String, numCode: Int, name: String, value: Double, previous: Int, nominal: Int) {
+    init(charCode: String, id: String, numCode: Int, name: String, value: Double, previous: Int, nominal: Double) {
         self.charCode = charCode
         self.id = id
         self.numCode = numCode
