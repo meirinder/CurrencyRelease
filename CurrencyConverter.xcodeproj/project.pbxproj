@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		C4A80C2B1F680E92004DB759 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A80C2A1F680E92004DB759 /* AppDelegate.swift */; };
-		C4A80C2D1F680E92004DB759 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A80C2C1F680E92004DB759 /* ViewController.swift */; };
 		C4A80C301F680E92004DB759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A80C2E1F680E92004DB759 /* Main.storyboard */; };
 		C4A80C321F680E92004DB759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A80C311F680E92004DB759 /* Assets.xcassets */; };
 		C4A80C351F680E92004DB759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A80C331F680E92004DB759 /* LaunchScreen.storyboard */; };
 		C4A80C401F680E92004DB759 /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A80C3F1F680E92004DB759 /* CurrencyConverterTests.swift */; };
 		C4A80C4B1F680E92004DB759 /* CurrencyConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A80C4A1F680E92004DB759 /* CurrencyConverterUITests.swift */; };
+		C4A80C591F680EA5004DB759 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A80C581F680EA5004DB759 /* MainController.swift */; };
+		C4A80C5C1F681F07004DB759 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A80C5B1F681F07004DB759 /* SwiftyJSON.framework */; };
+		C4A80C5F1F6824C6004DB759 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A80C5E1F6824C6004DB759 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		C4A80C271F680E92004DB759 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A80C2A1F680E92004DB759 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C4A80C2C1F680E92004DB759 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C4A80C2F1F680E92004DB759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4A80C311F680E92004DB759 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4A80C341F680E92004DB759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		C4A80C461F680E92004DB759 /* CurrencyConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A80C4A1F680E92004DB759 /* CurrencyConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterUITests.swift; sourceTree = "<group>"; };
 		C4A80C4C1F680E92004DB759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4A80C581F680EA5004DB759 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainController.swift; path = ../MainController.swift; sourceTree = "<group>"; };
+		C4A80C5B1F681F07004DB759 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		C4A80C5E1F6824C6004DB759 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A80C5C1F681F07004DB759 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,7 @@
 				C4A80C3E1F680E92004DB759 /* CurrencyConverterTests */,
 				C4A80C491F680E92004DB759 /* CurrencyConverterUITests */,
 				C4A80C281F680E92004DB759 /* Products */,
+				C4A80C5A1F681F07004DB759 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				C4A80C2A1F680E92004DB759 /* AppDelegate.swift */,
-				C4A80C2C1F680E92004DB759 /* ViewController.swift */,
+				C4A80C581F680EA5004DB759 /* MainController.swift */,
+				C4A80C5E1F6824C6004DB759 /* Item.swift */,
 				C4A80C2E1F680E92004DB759 /* Main.storyboard */,
 				C4A80C311F680E92004DB759 /* Assets.xcassets */,
 				C4A80C331F680E92004DB759 /* LaunchScreen.storyboard */,
@@ -125,6 +132,14 @@
 			path = CurrencyConverterUITests;
 			sourceTree = "<group>";
 		};
+		C4A80C5A1F681F07004DB759 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4A80C5B1F681F07004DB759 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +150,7 @@
 				C4A80C231F680E92004DB759 /* Sources */,
 				C4A80C241F680E92004DB759 /* Frameworks */,
 				C4A80C251F680E92004DB759 /* Resources */,
+				C4A80C5D1F681F4F004DB759 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -257,12 +273,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C4A80C5D1F681F4F004DB759 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C4A80C231F680E92004DB759 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4A80C2D1F680E92004DB759 /* ViewController.swift in Sources */,
+				C4A80C591F680EA5004DB759 /* MainController.swift in Sources */,
+				C4A80C5F1F6824C6004DB759 /* Item.swift in Sources */,
 				C4A80C2B1F680E92004DB759 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +452,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 96HSFZQ5P3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.s.kulizhnikov.CurrencyConverter;
@@ -431,6 +469,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 96HSFZQ5P3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.s.kulizhnikov.CurrencyConverter;
