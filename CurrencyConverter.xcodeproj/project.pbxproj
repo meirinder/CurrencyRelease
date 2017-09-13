@@ -16,6 +16,8 @@
 		C4A80C591F680EA5004DB759 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A80C581F680EA5004DB759 /* MainController.swift */; };
 		C4A80C5C1F681F07004DB759 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A80C5B1F681F07004DB759 /* SwiftyJSON.framework */; };
 		C4A80C5F1F6824C6004DB759 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A80C5E1F6824C6004DB759 /* Item.swift */; };
+		C4EDBB801F698E7B00D889B2 /* HelpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDBB7F1F698E7B00D889B2 /* HelpTableViewController.swift */; };
+		C4EDBB841F69981C00D889B2 /* HelpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDBB831F69981C00D889B2 /* HelpTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		C4A80C581F680EA5004DB759 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainController.swift; path = ../MainController.swift; sourceTree = "<group>"; };
 		C4A80C5B1F681F07004DB759 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		C4A80C5E1F6824C6004DB759 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C4EDBB7F1F698E7B00D889B2 /* HelpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpTableViewController.swift; sourceTree = "<group>"; };
+		C4EDBB831F69981C00D889B2 /* HelpTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 				C4A80C581F680EA5004DB759 /* MainController.swift */,
 				C4A80C5E1F6824C6004DB759 /* Item.swift */,
 				C4A80C2E1F680E92004DB759 /* Main.storyboard */,
+				C4EDBB7F1F698E7B00D889B2 /* HelpTableViewController.swift */,
+				C4EDBB831F69981C00D889B2 /* HelpTableViewCell.swift */,
 				C4A80C311F680E92004DB759 /* Assets.xcassets */,
 				C4A80C331F680E92004DB759 /* LaunchScreen.storyboard */,
 				C4A80C361F680E92004DB759 /* Info.plist */,
@@ -295,6 +301,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4EDBB841F69981C00D889B2 /* HelpTableViewCell.swift in Sources */,
+				C4EDBB801F698E7B00D889B2 /* HelpTableViewController.swift in Sources */,
 				C4A80C591F680EA5004DB759 /* MainController.swift in Sources */,
 				C4A80C5F1F6824C6004DB759 /* Item.swift in Sources */,
 				C4A80C2B1F680E92004DB759 /* AppDelegate.swift in Sources */,
@@ -558,6 +566,7 @@
 				C4A80C511F680E92004DB759 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4A80C521F680E92004DB759 /* Build configuration list for PBXNativeTarget "CurrencyConverterTests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +575,7 @@
 				C4A80C541F680E92004DB759 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4A80C551F680E92004DB759 /* Build configuration list for PBXNativeTarget "CurrencyConverterUITests" */ = {
 			isa = XCConfigurationList;
@@ -574,6 +584,7 @@
 				C4A80C571F680E92004DB759 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
