@@ -11,21 +11,27 @@ import SwiftyJSON
 
 class HelpTableViewController: UITableViewController {
 
-    @IBOutlet var itemCell: UITableViewCell!
-
-    let allCharCodes = ["RUR","AUD","AZN","GBP","AMD","BYN","BGN","BRL","HUF","HKD","DKK","USD","EUR","INR","KZT","CAD","KGS","CNY","MDL","NOK","PLN","RON","XDR","SGD","TJS","TRY","TMT","UZS","UAH","CZK","SEK","CHF","ZAR","KRW","JPY"]
+ //   @IBOutlet var itemCell: UITableViewCell!
+    
+    
+    var allCharCodes: [String] = []
     var itemStore: [String: Item] = [:]
     
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        getCurseOnDay()
+     //   getCurseOnDay()
+        
+      
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    func getCurseOnDay(){
+    
+    
+   /* func getCurseOnDay(){
         let url = URL(string: "https://www.cbr-xml-daily.ru/daily_json.js")
         let task = URLSession.shared.dataTask(with: url! as URL) { data, response, error in
             
@@ -54,7 +60,7 @@ class HelpTableViewController: UITableViewController {
         }
         
         task.resume()
-    }
+    }*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -73,8 +79,12 @@ class HelpTableViewController: UITableViewController {
     }
 
     
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HelpTableViewCell", for: indexPath) as! HelpTableViewCell
+        
+        
         
         if itemStore[allCharCodes[indexPath.row]] != nil
         {

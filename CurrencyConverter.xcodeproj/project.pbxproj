@@ -10,7 +10,6 @@
 		C4A80C2B1F680E92004DB759 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A80C2A1F680E92004DB759 /* AppDelegate.swift */; };
 		C4A80C301F680E92004DB759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A80C2E1F680E92004DB759 /* Main.storyboard */; };
 		C4A80C321F680E92004DB759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A80C311F680E92004DB759 /* Assets.xcassets */; };
-		C4A80C351F680E92004DB759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A80C331F680E92004DB759 /* LaunchScreen.storyboard */; };
 		C4A80C401F680E92004DB759 /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A80C3F1F680E92004DB759 /* CurrencyConverterTests.swift */; };
 		C4A80C4B1F680E92004DB759 /* CurrencyConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A80C4A1F680E92004DB759 /* CurrencyConverterUITests.swift */; };
 		C4A80C591F680EA5004DB759 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A80C581F680EA5004DB759 /* MainController.swift */; };
@@ -18,6 +17,7 @@
 		C4A80C5F1F6824C6004DB759 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A80C5E1F6824C6004DB759 /* Item.swift */; };
 		C4EDBB801F698E7B00D889B2 /* HelpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDBB7F1F698E7B00D889B2 /* HelpTableViewController.swift */; };
 		C4EDBB841F69981C00D889B2 /* HelpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDBB831F69981C00D889B2 /* HelpTableViewCell.swift */; };
+		C4EDBB861F6B8B6800D889B2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4EDBB851F6B8B6800D889B2 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,6 @@
 		C4A80C2A1F680E92004DB759 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4A80C2F1F680E92004DB759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4A80C311F680E92004DB759 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C4A80C341F680E92004DB759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4A80C361F680E92004DB759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4A80C3B1F680E92004DB759 /* CurrencyConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A80C3F1F680E92004DB759 /* CurrencyConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterTests.swift; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		C4A80C5E1F6824C6004DB759 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C4EDBB7F1F698E7B00D889B2 /* HelpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpTableViewController.swift; sourceTree = "<group>"; };
 		C4EDBB831F69981C00D889B2 /* HelpTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpTableViewCell.swift; sourceTree = "<group>"; };
+		C4EDBB851F6B8B6800D889B2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +111,10 @@
 				C4A80C581F680EA5004DB759 /* MainController.swift */,
 				C4A80C5E1F6824C6004DB759 /* Item.swift */,
 				C4A80C2E1F680E92004DB759 /* Main.storyboard */,
+				C4EDBB851F6B8B6800D889B2 /* Launch Screen.storyboard */,
 				C4EDBB7F1F698E7B00D889B2 /* HelpTableViewController.swift */,
 				C4EDBB831F69981C00D889B2 /* HelpTableViewCell.swift */,
 				C4A80C311F680E92004DB759 /* Assets.xcassets */,
-				C4A80C331F680E92004DB759 /* LaunchScreen.storyboard */,
 				C4A80C361F680E92004DB759 /* Info.plist */,
 			);
 			path = CurrencyConverter;
@@ -257,7 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4A80C351F680E92004DB759 /* LaunchScreen.storyboard in Resources */,
+				C4EDBB861F6B8B6800D889B2 /* Launch Screen.storyboard in Resources */,
 				C4A80C321F680E92004DB759 /* Assets.xcassets in Resources */,
 				C4A80C301F680E92004DB759 /* Main.storyboard in Resources */,
 			);
@@ -347,14 +347,6 @@
 				C4A80C2F1F680E92004DB759 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C4A80C331F680E92004DB759 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C4A80C341F680E92004DB759 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

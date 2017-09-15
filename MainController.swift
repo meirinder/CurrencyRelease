@@ -156,16 +156,25 @@ class MainView: UIViewController {
         cleanTextFields(textFields: leftTextField,rightTextField)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "HelpTable" {
+            let infoTabVC = segue.destination as? HelpTableViewController
+            infoTabVC?.itemStore = itemStore
+            infoTabVC?.allCharCodes = allCharCodes
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         leftLabel.text = ""
         rightLabel.text = ""
         errorLabel.text = ""
         
+        
         getCurseOnDay()
     }
     
-    
+
    
 
 }
