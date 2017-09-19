@@ -88,6 +88,7 @@ class MainView: UIViewController {
     
     
     
+    
     @IBAction func editingChangedLeft(_ sender: Any) {
         if (leftTextField.text?.isEmpty)!
         {
