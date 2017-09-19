@@ -1,4 +1,4 @@
-//
+
 //  MainView.swift
 //  ConvertCurrency
 //
@@ -85,6 +85,8 @@ class MainView: UIViewController {
     @IBAction func cleanAllTextFields(_ sender: Any) {
         cleanTextFields(textFields: fromTextFieldForValute,toTextFieldForValute,leftTextField,rightTextField)
     }
+    
+    
     
     @IBAction func editingChangedLeft(_ sender: Any) {
         if (leftTextField.text?.isEmpty)!
