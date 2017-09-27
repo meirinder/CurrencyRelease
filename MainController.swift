@@ -20,8 +20,8 @@ class MainView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet var leftLabel: UILabel!
     @IBOutlet var rightLabel: UILabel!
 
-    var fromText: String = ""
-    var toText: String = ""
+    var fromText: String = "RUR"
+    var toText: String = "RUR"
     
     let allCharCodes = ["RUR","AUD","AZN","GBP","AMD",
                         "BYN","BGN","BRL","HUF","HKD","DKK","USD",
@@ -90,13 +90,13 @@ class MainView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
         
     }
-    func convertCurrency(fromTextField: UITextField!, fromValute: String?, toTextField: UITextField!, toValute: String?)
+    func convertCurrency(fromTextField: UITextField!, fromValute: String, toTextField: UITextField!, toValute: String)
     {
         var converted = Double(fromTextField.text!)
-        converted = converted! * (self.itemStore[fromValute!]?.value)!
-        converted = converted! / (self.itemStore[fromValute!]?.nominal)!
-        converted = converted! * (self.itemStore[toValute!]?.nominal)!
-        converted = converted! / (self.itemStore[toValute!]?.value)!
+        converted = converted! * (self.itemStore[fromValute]?.value)!
+        converted = converted! / (self.itemStore[fromValute]?.nominal)!
+        converted = converted! * (self.itemStore[toValute]?.nominal)!
+        converted = converted! / (self.itemStore[toValute]?.value)!
         
         toTextField.text = "\(converted!)"
     }
