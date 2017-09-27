@@ -10,18 +10,24 @@ import UIKit
 import SwiftyJSON
 
 
-class MainView: UIViewController {
 
-    @IBOutlet var fromTextFieldForValute: UITextField!
-    @IBOutlet var toTextFieldForValute: UITextField!
+class MainView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+
+    
+    @IBOutlet var leftPickerView: UIPickerView!
     @IBOutlet var leftTextField: UITextField!
     @IBOutlet var rightTextField: UITextField!
     @IBOutlet var leftLabel: UILabel!
     @IBOutlet var rightLabel: UILabel!
-    @IBOutlet var errorLabel: UILabel!
+
+    var fromText: String = ""
+    var toText: String = ""
     
-    
-    let allCharCodes = ["RUR","AUD","AZN","GBP","AMD","BYN","BGN","BRL","HUF","HKD","DKK","USD","EUR","INR","KZT","CAD","KGS","CNY","MDL","NOK","PLN","RON","XDR","SGD","TJS","TRY","TMT","UZS","UAH","CZK","SEK","CHF","ZAR","KRW","JPY"]
+    let allCharCodes = ["RUR","AUD","AZN","GBP","AMD",
+                        "BYN","BGN","BRL","HUF","HKD","DKK","USD",
+                        "EUR","INR","KZT","CAD","KGS","CNY",
+                        "MDL","NOK","PLN","RON","XDR","SGD",
+                        "TJS","TRY","TMT","UZS","UAH","CZK","SEK","CHF","ZAR","KRW","JPY"]
     var itemStore: [String: Item] = [:]
     
     func getCurseOnDay(){
@@ -55,37 +61,45 @@ class MainView: UIViewController {
         task.resume()
     }
     
-    func convertCurrency(fromTextField: UITextField!, fromValute: String?, toTextField: UITextField!, toValute: String?)
-    {
-        if (leftLabel.text != nil)&&(rightLabel.text != nil)
-        {
-            if ((leftLabel.text?.isEmpty)!)||((rightLabel.text?.isEmpty)!)
-            {
-                errorLabel.text = "Ошибка ввода валюты"
-            }
-            else
-            {
-                errorLabel.text = ""
-                var converted = Double(fromTextField.text!)
-                converted = converted! * (self.itemStore[fromValute!]?.value)!
-                converted = converted! / (self.itemStore[fromValute!]?.nominal)!
-                converted = converted! * (self.itemStore[toValute!]?.nominal)!
-                converted = converted! / (self.itemStore[toValute!]?.value)!
-                
-                toTextField.text = "\(converted!)"
-            }
-        }
-        else
-        {
-            errorLabel.text = "Ошибка ввода валюты"
-        }
-        
-        
-    }
-    @IBAction func cleanAllTextFields(_ sender: Any) {
-        cleanTextFields(textFields: fromTextFieldForValute,toTextFieldForValute,leftTextField,rightTextField)
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
     }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return allCharCodes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return allCharCodes[row]
+    }
+    
+
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        cleanTextFields(textFields: leftTextField, rightTextField)
+        switch component {
+        case 0:
+            leftLabel.text = self.itemStore[allCharCodes[row].uppercased()]?.name
+            fromText = allCharCodes[row]
+        default:
+            rightLabel.text = self.itemStore[allCharCodes[row].uppercased()]?.name
+            toText = allCharCodes[row]
+        }
+        print(fromText, toText)
+        leftPickerView.selectedRow(inComponent: 0)
+
+        
+    }
+    func convertCurrency(fromTextField: UITextField!, fromValute: String?, toTextField: UITextField!, toValute: String?)
+    {
+        var converted = Double(fromTextField.text!)
+        converted = converted! * (self.itemStore[fromValute!]?.value)!
+        converted = converted! / (self.itemStore[fromValute!]?.nominal)!
+        converted = converted! * (self.itemStore[toValute!]?.nominal)!
+        converted = converted! / (self.itemStore[toValute!]?.value)!
+        
+        toTextField.text = "\(converted!)"
+    }
     
     
     
@@ -96,17 +110,12 @@ class MainView: UIViewController {
         }
         else
         {
-            if (rightTextField.text == ".") || (leftTextField.text == ".")
-            {
-                errorLabel.text = "Ошибка ввода значения"
-                return
-            }
             if (leftTextField.text?.hasSuffix(".."))!
             {
                 leftTextField.text = ""
                 return
             }
-            convertCurrency(fromTextField: leftTextField, fromValute: fromTextFieldForValute.text?.uppercased(), toTextField: rightTextField, toValute: toTextFieldForValute.text?.uppercased())
+            convertCurrency(fromTextField: leftTextField, fromValute: fromText, toTextField: rightTextField, toValute: toText)
         }
         
     }
@@ -117,18 +126,12 @@ class MainView: UIViewController {
         }
         else
         {
-            if (rightTextField.text == ".") || (leftTextField.text == ".")
-            {
-                errorLabel.text = "Ошибка ввода значения"
-                
-                return
-            }
             if (rightTextField.text?.hasSuffix(".."))!
             {
                 rightTextField.text = ""
                 return
             }
-            convertCurrency(fromTextField: rightTextField, fromValute: toTextFieldForValute.text?.uppercased() , toTextField: leftTextField, toValute: fromTextFieldForValute.text?.uppercased())
+            convertCurrency(fromTextField: rightTextField, fromValute: toText, toTextField: leftTextField, toValute: fromText)
         }
         
     }
@@ -143,20 +146,9 @@ class MainView: UIViewController {
        
    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer)
     {
-        fromTextFieldForValute.resignFirstResponder()
-        toTextFieldForValute.resignFirstResponder()
         leftTextField.resignFirstResponder()
         rightTextField.resignFirstResponder()
         
-    }
-    @IBAction func FromTextFieldEditingDidEnd(_ sender: Any) {
-        leftLabel.text = self.itemStore[fromTextFieldForValute.text!.uppercased()]?.name
-    }
-    @IBAction func ToTextFieldEditingDidEnd(_ sender: Any) {
-        rightLabel.text = self.itemStore[toTextFieldForValute.text!.uppercased()]?.name
-    }
-    @IBAction func fromAndToTextFieldEditingDidBegin(_ sender: Any) {
-        cleanTextFields(textFields: leftTextField,rightTextField)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -167,12 +159,14 @@ class MainView: UIViewController {
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        leftLabel.text = ""
-        rightLabel.text = ""
-        errorLabel.text = ""
+        leftLabel.text = "Российский рубль"
+        rightLabel.text = "Российский рубль"
         
+        leftPickerView.delegate = self
+        leftPickerView.dataSource = self
         
         getCurseOnDay()
     }
